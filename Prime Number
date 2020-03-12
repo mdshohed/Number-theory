@@ -1,9 +1,10 @@
 /// 0-n number print...
 #include <bits/stdc++.h>
 using namespace std;
-#define Max 100
+#define Max 10000
 bool prime[Max];
 vector<int> v;
+
 void sieve(int n) {
   for ( int i = 0; i<Max; i++) prime[i] = true;
   for ( int i = 2; i*i<=Max ; i++) {
@@ -22,9 +23,9 @@ void sieve(int n) {
     cout<<v[i]<<endl;
   }
 }
+
 int main() {
   int n;
-
   sieve(n);
   return 0;
 }
