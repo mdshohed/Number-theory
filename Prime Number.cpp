@@ -1,6 +1,7 @@
 /// 0-n number print...
 #include <bits/stdc++.h>
 using namespace std;
+
 #define Max 10000
 bool prime[Max];
 vector<int> v;
@@ -67,11 +68,13 @@ int main () {
 // primefactorization ...
 #include <bits/stdc++.h>
 using namespace std;
+
 #define m 10000
 vector<int> prime;
 bool status[m];
 int List[130];
 int listcount;
+
 void sieve() {
   for ( int i = 3; i*i<=m; i+=2) {
     if ( status[i] == false) {
