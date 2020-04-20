@@ -113,3 +113,41 @@ int main () {
   }
   return 0;
 }
+
+
+/// 1 to n prime value print
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+const int mod = 1e9 + 7;
+const int mx  = 1e5 + 7;
+vector<int> v;
+bool ara[mx];
+
+int sieve() {
+    v.push_back(2);
+    for (int i = 3; i*i<=mx; i+=2) {
+        if ( ara[i] == false) {
+            for ( int j = i*i; j<=mx; j+=i+i) {
+                ara[j] = true;
+            }
+            v.push_back(i);
+        }
+    }
+
+}
+int main() {
+    sieve();
+    while(1) {
+        int n;
+        cin >> n;
+        for( int i = 3; i<=n; i+=2) {  /// 1 to n value till print 
+            if ( ara[i] == false) {
+                cout << i << " ";
+            }
+        }
+        cout << '\n';
+    }
+    return 0;
+}
