@@ -114,7 +114,6 @@ int main () {
   return 0;
 }
 
-
 /// 1 to n prime value print
 #include <bits/stdc++.h>
 using namespace std;
@@ -135,7 +134,6 @@ int sieve() {
             v.push_back(i);
         }
     }
-
 }
 int main() {
     sieve();
