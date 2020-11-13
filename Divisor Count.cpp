@@ -1,7 +1,6 @@
 /*
 Time complexity: root(n)
 */
-
 #include <bits/stdc++.h>
 using namespace std;
 
