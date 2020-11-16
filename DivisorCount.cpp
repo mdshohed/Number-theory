@@ -17,7 +17,6 @@ void divisor(int n){
 }
 
 int main() {
-
     int n;
     cin >> n;
     divisor(n);
