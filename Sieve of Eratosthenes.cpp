@@ -13,6 +13,25 @@ const int mx = 1e7+7;
 bool prime[mx];
 vector<int> v;
 
+/*void sieve(){
+    //v.push_back(2);
+    for (int i = 3; i*i<=mx; i+=2) {
+        if (prime[i]==false) {
+            for (int j = i*i; j<=mx; j+=i+i) {
+                prime[j] = true;
+            }
+        }
+    }
+    cout << 2 << " ";
+    for (int i = 3; i<=1000; i+=2) {
+        if ( prime[i]==false){
+            cout << i << " "; 
+            v.push_back(i); 
+        }
+    }
+    cout << endl;
+}*/
+
 void sieve() {
     memset(prime,true,sizeof(prime));
     for (int i = 0; i<=mx; i+=2) prime[i] = false;
