@@ -18,7 +18,6 @@ void sieve() {
     for (int i = 0; i<=mx; i+=2) prime[i] = false;
     prime[0] = prime[1] = false;
     prime[2] = true;
-    
     for (int i = 3; i*i<=mx; i+=2) {
         if (prime[i]) {
             for (int j = i*i; j<=mx; j+=i+i) {
@@ -26,7 +25,6 @@ void sieve() {
             }
         }
     }
-    
     v.push_back(2);
     for (int i = 3; i<=mx; i+=2) {
         if ( prime[i]) v.push_back(i);
@@ -36,11 +34,9 @@ void sieve() {
 int main (){
     //freopen( "in.txt", "r", stdin );
 
-    sieve();
-
+    sieve()
     int n = 100;
     //cin >> n;
-
     // print prime Number form 1 to 100;
     for (int i = 0; i<=n; i++) {
         if ( prime[i]) {
@@ -48,7 +44,6 @@ int main (){
         }
         else cout << i << " is not prime" << endl;
     }
-
     // prime 100 prime Number
     for (int i = 0; i<n; i++) {
         cout << v[i] << " ";
