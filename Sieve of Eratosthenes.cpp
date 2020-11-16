@@ -1,5 +1,5 @@
 /*
-problem: 
+Time Complexity: O(Nlog(logN))
 algorithm: sieve
 input:
 
