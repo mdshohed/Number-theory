@@ -2,9 +2,7 @@
 Time Complexity: O(Nlog(logN))
 algorithm: sieve
 input:
-
 output:
-
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -52,7 +50,6 @@ void sieve() {
 
 int main (){
     //freopen( "in.txt", "r", stdin );
-
     sieve()
     int n = 100;
     //cin >> n;
