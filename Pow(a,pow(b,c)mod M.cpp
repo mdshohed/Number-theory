@@ -32,5 +32,7 @@ int main() {
           b^  
     x = A^
     
+  1. y = (B ^ C) % (M - 1)
+  2. Ans = (A ^ y) % M
     
 */
