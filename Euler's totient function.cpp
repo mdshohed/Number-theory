@@ -20,7 +20,7 @@ int pi1(int n ) {
     return cnt;
 }
 
-/// Time Complexity: O(nLogn)
+// Time Complexity: O(nLogn)
 int pi2(int n) {
     // prime factor 10: 2,5;
     //  n/2  = 5   where result = 5 ans n = 5
@@ -39,6 +39,28 @@ int pi2(int n) {
    if ( n>1) resut = resut - resut/n;
    return resut;
 }
+
+// Time Complexity O(n log log n)
+void pi3() {
+    int n = 1e5+7;
+    int pi[n];
+    for (int i = 0; i<n; i++ ) {
+        pi[i] = i;
+    }
+    for (int j = 2; j<n; j++ ) {
+        if (pi[j]==j ) {
+            pi[j] = j-1;
+            for (int i = 2*j; i<n; i+=j ) {
+                pi[i] = ( pi[i]/j ) * ( j-1);
+            }
+        }
+    }
+    for (int i = 0; i<100; i++ ) {
+        cout << pi[i] << " ";
+    }
+    cout << endl;
+}
+
 
 int main() {
     freopen( "in.txt", "r", stdin );
