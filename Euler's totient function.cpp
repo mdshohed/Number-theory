@@ -64,7 +64,7 @@ void pi3() {
 
 int main() {
     freopen( "in.txt", "r", stdin );
-
+    pi3();
     int t;
     cin >> t;
     while ( t-- ) {
