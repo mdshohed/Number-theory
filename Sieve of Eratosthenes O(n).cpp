@@ -1,21 +1,11 @@
-
-#include "bits/stdc++.h";
-using namespace std;
-
-const int mx = 1e6+7;
-int lp[mx+1];
-vector<int> v;
-
-int main() {
-    for(int i=2; i<mx; i++) {
-        if (!lp[i]) {
-            v.push_back(i);
-            lp[i] = i;
-        }
-        for(int j=0; j<(int)v.size()&&v[j]<=lp[i]&&i*v[j]<=mx; j++) {
-            lp[i*v[j]]=v[j];
-        }
-    }
-    for(int i = 0; i<100; i++) cout << v[i] << " ";
-    cout << endl;
+const int n= 1e5+7; 
+int sp[n]; 
+vector<int> prime; 
+void seive(){
+	for(int i = 2; i<n; i++) {
+		if (!sp[i] ) sp[i] = i, prime.push_back(i); 
+		for(int j = 0; j<(int)prime.size()&& i*prime[j] < n && prime[j]<=sp[i]; j++){
+			sp[i*prime[j]] = prime[j]; 
+		}
+	}
 }
