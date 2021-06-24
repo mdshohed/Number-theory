@@ -8,4 +8,6 @@ void seive(){
 			sp[i*prime[j]] = prime[j]; 
 		}
 	}
+	for(int i:prime) cout << i << " ";
+	cout << endl;
 }
