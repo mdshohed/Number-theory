@@ -1,47 +1,46 @@
 /*
 Time complexity: O(k Log n)
-algorithm: fermal primality 
+algorithm: Fermal primality 
 input:
 output:
 */
 #include <bits/stdc++.h>
-using namespace std;
+using namespace std; 
 
-typedef long long ll;
+#define ll long long 
 
-int binpow(ll a, ll b, ll mod) {
-    a%=mod;
-    ll ans = 1;
-    while (b>0) {
-        if ( b&1) ans = ans*a%mod;
-        a = a*a%mod;
-        b>>=1;
-    }
-    return ans;
-}
-
-bool fermat_primality(ll n) {
-    if ( n<2 || n==4) return false;
-    if ( n<=3) return true;
-
-    for (ll i = 0; i<n; i++) {
-        ll a = 2 + rand()%(n-3);
-        if( binpow(a,n-1,n)!=1 ) return false;
+bool fermatPrimality(ll n) {
+    
+    auto binpow = [&](ll a, ll p,int mod) {
+        p %=mod;
+        ll sum = 1; 
+        while (p) {
+            if(p&1) sum = (1LL*a*sum) % mod; 
+            a = (a*1LL*a) % mod;
+            p >>= 1;  
+        }
+        return sum; 
+    }; 
+    
+    if(n<2) return 0;
+    if (n==2||n==3) return 1;
+    if (n%2==0) return 0; 
+    for(ll i = 0; i<n; i++) {
+        ll a = 2 + rand()%(n-3); 
+        if (binpow(a,n-1,n)!=1) return false; 
     }
     return true;
 }
 
 int main() {
-    //freopen( "in.txt", "r", stdin );
-    int t;
-    cin >> t;
-    while (t--) {
-        ll n;
-        cin >> n;
-        if (fermat_primality(n)) cout << "YES" << endl;
-        else cout << "NO" << endl;
+    freopen("in.txt", "r", stdin );
+    int cnt = 0;  
+    for(int i = 1; i<100; i++) {
+        if ( fermatPrimality(i)) cout << i << " is Prime" << endl, cnt++; 
     }
-
-    return 0;
+    cout << cnt << endl; 
+    cout << endl; 
 }
+
+
 
