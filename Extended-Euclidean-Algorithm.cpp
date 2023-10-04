@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long 
 
 int main(){
     function<ll(ll,ll,ll&,ll&)> egcd = [&](ll a, ll b, ll &x, ll &y){
