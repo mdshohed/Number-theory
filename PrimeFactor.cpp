@@ -41,10 +41,9 @@ void primefactor(int n) {
 int main () {
     sieve();
     int t;
-    t = 3;
+    t = 1; 
     while ( t--) {
-        int n;
-        cin>>n;
+        int n = 25;  
         primefactor(n);
         for (int i = 0; i<factor.size(); i++) {
             cout << factor[i] << " ";
@@ -53,5 +52,14 @@ int main () {
         factor.clear();
     }
 
+    int n = 100; 
+    map<int,int> mp;  
+    for(int i = 2; i<=sqrt(n); i++){
+        while( n%i == 0){
+            mp[i]++;
+            n/=i; 
+        }
+    }
+    if(n>1) mp[n]++; 
     return 0;
 }
